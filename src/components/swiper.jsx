@@ -42,7 +42,7 @@ function Swipper() {
   return (
     <div>
       <Swiper
-        className="h-[40vh] md:h-[80vh] ease-in-out"
+        className="h-[50vh] md:h-[80vh] ease-in-out"
         modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={10}
         slidesPerView={1}

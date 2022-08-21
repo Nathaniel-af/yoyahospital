@@ -13,7 +13,7 @@ function Nav() {
   return (
     <>
       <div className=" flex relative sm:flex-col justify-between flex-row p-5 sm:p-0 ">
-        <div className="bg-[#005E6C] md:flex  justify-between items-center h-12 px-4 hidden text-white">
+        <div className="bg-[#005E6C] md:flex items-center justify-between  h-12 px-4 hidden text-white">
           <div className="flex ml-auto mr-5 ">
             <div className="flex justify-between w-[500px] items-center">
               <BsFillTelephoneFill></BsFillTelephoneFill>
@@ -27,13 +27,13 @@ function Nav() {
             </div>
           </div>
         </div>
-        <div className="bg-white flex justify-end items-center px-14 py-6">
+        <div className="bg-white flex justify-end items-center px-14 sm:py-6 ">
           <img
-            className="absolute h-20 w-24 md:h-56 md:w-60  md:top-[10px] top-1 left-0 z-30"
+            className="absolute h-[70px] w-[80px] md:h-56 md:w-60  md:top-[10px] top-1 left-0 z-30"
             src={logo}
             alt=""
           />
-          <ul className="hidden sm:flex text-[#818181] text-sm font-semibold uppercase">
+          <ul className="hidden lg:flex text-[#818181] text-xs md:text-sm font-semibold uppercase">
             <li className="p-4 text-[#1990A2]">Home</li>
             <li className="p-4">About us</li>
             <li className="p-4">services</li>
@@ -47,11 +47,20 @@ function Nav() {
             </button>
           </ul>
         </div>
-        <div onClick={handleClick} className="block md:hidden">
+        <div
+          onClick={handleClick}
+          className="fixed z-30 right-5 top-1  md:top-14 lg:hidden"
+        >
           {nav ? (
-            <AiOutlineMenu size={22}></AiOutlineMenu>
+            <AiOutlineMenu
+              className="bg-white rounded-full p-[4px] "
+              size={28}
+            ></AiOutlineMenu>
           ) : (
-            <AiOutlineClose size={20}></AiOutlineClose>
+            <AiOutlineClose
+              className="bg-white rounded-full p-[4px] "
+              size={28}
+            ></AiOutlineClose>
           )}
         </div>
         <div
