@@ -13,6 +13,7 @@ import poster5 from "../assets/Swiperassets/poster6.jpg";
 import poster7 from "../assets/Swiperassets/poster8.jpg";
 import poster8 from "../assets/Swiperassets/poster9.jpg";
 import poster9 from "../assets/Swiperassets/poster10 .jpg";
+import seized from "../assets/Swiperassets/SIZED.jpg";
 function Swipper() {
   const images = [
     poster1,
@@ -23,17 +24,14 @@ function Swipper() {
     poster7,
     poster8,
     poster9,
+    seized,
   ];
 
   const slider = () => {
     return images.map((img) => {
       return (
         <SwiperSlide className="">
-          <img
-            className="h-full w-full md:object-cover object-top"
-            src={img}
-            alt=""
-          />
+          <img className="h-full w-full  object-top " src={img} alt="" />
         </SwiperSlide>
       );
     });
@@ -42,7 +40,7 @@ function Swipper() {
   return (
     <div>
       <Swiper
-        className="h-[50vh] md:h-[80vh] ease-in-out"
+        className="h-[40vh] md:h-[80vh] ease-in-out"
         modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={10}
         slidesPerView={1}
