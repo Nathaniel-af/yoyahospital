@@ -40,7 +40,7 @@ function Nav() {
             <li className="p-4">Our Doctors</li>
             <li className="p-4">Blog</li>
             <li className="p-4">contact</li>
-            <button className="border-2 border-[#1990A2] text-[#1990A2] rounded-full px-5 py-3 font-bold ml-14 text-center hover:bg-[#1990A2] hover:text-white">
+            <button className="border-2 border-[#1990A2] text-[#1990A2] rounded-full px-5 py-3 font-bold ml-14 text-center hover:bg-[#1990A2] hover:text-white hover:animate-bounce">
               {" "}
               <BiCalendar className="inline mr-1" size={24}></BiCalendar>
               APPOINTMENT

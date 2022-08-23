@@ -30,8 +30,8 @@ function Swipper() {
   const slider = () => {
     return images.map((img) => {
       return (
-        <SwiperSlide className="">
-          <img className="h-full w-full  object-top " src={img} alt="" />
+        <SwiperSlide key={img} className="">
+          <img className="h-full w-full  " src={img} alt="" />
         </SwiperSlide>
       );
     });
@@ -49,8 +49,8 @@ function Swipper() {
         navigation
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         {slider()}
       </Swiper>

@@ -1,4 +1,6 @@
 import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Nav from "../components/Nav";
 import Swipper from "../components/swiper";
 import Typed from "react-typed";
@@ -9,188 +11,156 @@ import image4 from "../assets/services/image4.png";
 import image5 from "../assets/services/image5.png";
 import image6 from "../assets/services/image6.png";
 import aboutus from "../assets/aboutus.png";
+import { useEffect } from "react";
+const Variants = {
+  hidden: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", delay: 0.5, duration: 0.6 },
+  },
+};
 
 function Home() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+  const animation = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+    }
+    if (!inView) {
+      animation.start({ x: "-100vw" });
+    }
+    console.log("use effect hook , inview=", inView);
+  }, [inView]); /*  */
+
   return (
     <>
       <Nav />
       <Swipper />
       {/* Services */}
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-10 md:py-14 mx-auto">
-          <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
-            <h1 class="sm:text-3xl text-2xl font-bold title-font mb-2 text-gray-900">
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-10 md:py-14 mx-auto">
+          <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+            <h1 className="sm:text-3xl text-2xl font-bold title-font mb-2 text-gray-900">
               OUR SERVICES
             </h1>
-            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+            <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
               YOYA Hospital offers the following services
             </p>
           </div>
-          <div class="flex flex-wrap -m-4">
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
-                <div class=" inline-flex items-center justify-center rounded-full ">
-                  {/* <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                  </svg> */}
+          <div ref={ref} className="flex flex-wrap -m-4">
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+              <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
+                <div className=" inline-flex items-center justify-center rounded-full ">
                   <img src={image1} alt="" />
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium mb-2">
+                <h2 className="text-lg text-gray-900 font-medium mb-2">
                   Accidents/ Emergency and Out Patient
                 </h2>
-                <p class="leading-relaxed text-base">
+                <p className="leading-relaxed text-base">
                   Our outpatient department provides diagnosis and care for all
                   patients, those who do not require hospitalization as well the
                   ones that require admission.
                 </p>
               </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
-                <div class=" inline-flex items-center justify-center rounded-full">
-                  {/* <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                  </svg> */}
+            </motion.div>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+              <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
+                <div className=" inline-flex items-center justify-center rounded-full">
                   <img src={image2} alt="" />
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
                   Inpatient Services
                 </h2>
-                <p class="leading-relaxed text-base">
+                <p className="leading-relaxed text-base">
                   YOYA hospital has a bed capacity of 150 patients. Our services
                   are geared towards ensuring that the patients receive quality
                   care that will improve their prognosis.
                 </p>
               </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
-                <div class="inline-flex items-center justify-center rounded-full mb-4 ">
-                  {/* <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg> */}
+            </motion.div>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+              <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
+                <div className="inline-flex items-center justify-center rounded-full mb-4 ">
                   <img src={image3} alt="" />
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
                   Laboratory Services
                 </h2>
-                <p class=" text-base">
+                <p className=" text-base">
                   Offering 24 hour service at affordable prices. The laboratory
                   is staffed with experienced laboratory technologists and well
                   equipped with current state of art technology.
                 </p>
               </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
-                <div class="inline-flex items-center justify-center rounded-full  mb-4">
-                  {/* <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"></path>
-                  </svg> */}
+            </motion.div>
+            <motion.div
+              className="xl:w-1/3 md:w-1/2 p-4"
+              ref={ref}
+              animate={animation}
+            >
+              <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
+                <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image6} alt="" />
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
                   MCH and Maternity
                 </h2>
-                <p class="leading-relaxed text-base">
+                <p className="leading-relaxed text-base">
                   At YOYA, we have dedicated departments that specializes in
                   caring for women during pregnancy and childbirth.
                 </p>
               </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4 ">
-              <div class="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
-                <div class="inline-flex items-center justify-center rounded-full  mb-4">
-                  {/* <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg> */}
+            </motion.div>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4 " animate={animation}>
+              <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
+                <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image5} alt="" />
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
                   Pharmacy Services
                 </h2>
-                <p class="leading-relaxed text-base">
+                <p className="leading-relaxed text-base">
                   Fingerstache flexitarian street art 8-bit waist co, subway
                   tile poke farm.
                 </p>
               </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
-                <div class="inline-flex items-center justify-center rounded-full  mb-4">
-                  {/* <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg> */}
+            </motion.div>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+              <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
+                <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image4} alt="" />
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
                   Radiology and Sonography
                 </h2>
-                <p class="leading-relaxed text-base">
+                <p className="leading-relaxed text-base">
                   Ultrasound, or Sonography, is a technique that uses sound
                   waves to study and treat different areas of the body.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
       {/* About us */}
 
-      <section class="text-gray-600 body-font ">
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <section className="text-gray-600 body-font ">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
               // class="object-cover object-center rounded md:h-80 w-[100%] sm:w-full sm:h-full"
               className="object-cover object-center rounded"
@@ -198,12 +168,12 @@ function Home() {
               src={aboutus}
             />
           </div>
-          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center  justify-center ">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center  justify-center ">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               ABOUT US
-              <br class="" />
+              <br className="" />
             </h1>
-            <p class="mb-8 leading-relaxed text-justify">
+            <p className="mb-8 leading-relaxed text-justify">
               <p className="inline border-b-2 text-gray-800">OUR STORY</p> YOYA
               Hospital is established Lorem ipsum dolor, sit amet consectetur
               adipisicing elit. Nihil consectetur omnis suscipit repudiandae,
@@ -212,7 +182,7 @@ function Home() {
               Placeat!.....
             </p>
             <div className="flex justify-center">
-              <button class="inline-flex text-white hover:bg-indigo-500 border-0 py-2 px-6 focus:outline-none bg-[#1990A2] rounded text-lg">
+              <button className="inline-flex text-white hover:bg-indigo-500 border-0 py-2 px-6 focus:outline-none bg-[#1990A2] rounded text-lg">
                 READ MORE
               </button>
             </div>
@@ -222,17 +192,17 @@ function Home() {
 
       {/* video and typed text */}
 
-      <section class="text-gray-600  bg-gray-100">
-        <div class=" mx-auto flex px-5 py-5 md:flex-row flex-col md:gap-7 items-center">
-          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <section className="text-gray-600  bg-gray-100">
+        <div className=" mx-auto flex px-5 py-5 md:flex-row flex-col md:gap-7 items-center">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
               className="object-cover object-center rounded  "
               alt="hero"
               src="https://scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/276242238_156328050115085_424367970683167284_n.jpg?stp=dst-jpg_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_ohc=51ZbHuBci7wAX-ygHQ3&_nc_ht=scontent.fadd2-1.fna&oh=00_AT-OAqehxAOJO3n9u2FNcDp_7JwavgJZNEfTeoil_zCZKw&oe=62E08216"
             />
           </div>
-          <div class=" md:py-24 py-10 px-20 sm:px-0  w-full md:w-1/2   flex flex-col justify-center items-center text-center bg-white rounded-xl shadow-lg">
-            <p class=" font-pacifico   leading-relaxed text-base  md:text-xl lg:text-2xl text-gray-600">
+          <div className=" md:py-24 py-10 px-20 sm:px-0  w-full md:w-1/2   flex flex-col justify-center items-center text-center bg-white rounded-xl shadow-lg">
+            <p className=" font-pacifico   leading-relaxed text-base  md:text-xl lg:text-2xl text-gray-600">
               <p className="text-[#1990A2] inline">" </p>{" "}
               <Typed
                 strings={["Your Center of Excellence", "Center of Excellence "]}
@@ -250,81 +220,81 @@ function Home() {
         What patients say <h1 className="inline text-[#1990A2]">About YOYA</h1>
       </div>
 
-      <div class="w-full flex flex-col md:flex-row gap-4 mb-8 md:mb-0 flex-between items-center p-8">
-        <div class="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
-          <p class="text-black ">
-            <span class="font-bold text-indigo-500 text-lg">“</span>
+      <div className="w-full flex flex-col md:flex-row gap-4 mb-8 md:mb-0 flex-between items-center p-8">
+        <div className="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
+          <p className="text-black ">
+            <span className="font-bold text-indigo-500 text-lg">“</span>
             To get social media testimonials like these, keep your customers
             engaged with your social media accounts by posting regularly
             yourself
-            <span class="font-bold text-indigo-500 text-lg">”</span>
+            <span className="font-bold text-indigo-500 text-lg">”</span>
           </p>
-          <div class="flex items-center mt-4">
-            <a href="#" class="block relative">
+          <div className="flex items-center mt-4">
+            <a href="#" className="block relative">
               <img
                 alt="profil"
                 src="https://img.freepik.com/free-photo/young-handsome-man-isolated-white-background_185193-82024.jpg?t=st=1658584176~exp=1658584776~hmac=722d922409729aa341bee966de291e133e9df5224d41865c3463180c3d7a0d93&w=740"
-                class="mx-auto object-cover rounded-full h-10 w-10 "
+                className="mx-auto object-cover rounded-full h-10 w-10 "
               />
             </a>
-            <div class="flex flex-col ml-2 justify-between">
-              <span class="font-semibold text-[#1990A2] text-sm">
+            <div className="flex flex-col ml-2 justify-between">
+              <span className="font-semibold text-[#1990A2] text-sm">
                 Firaol Birhanu
               </span>
-              <span class=" text-xs flex items-center">CEO of HABESHA</span>
+              <span className=" text-xs flex items-center">CEO of HABESHA</span>
             </div>
           </div>
         </div>
-        <div class="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
-          <p class="text-black ">
-            <span class="font-bold text-indigo-500 text-lg">“</span>
+        <div className="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
+          <p className="text-black ">
+            <span className="font-bold text-indigo-500 text-lg">“</span>
             To get social media testimonials like these, keep your customers
             engaged with your social media accounts by posting regularly
             yourself
-            <span class="font-bold text-indigo-500 text-lg">”</span>
+            <span className="font-bold text-indigo-500 text-lg">”</span>
           </p>
-          <div class="flex items-center mt-4">
-            <a href="#" class="block relative">
+          <div className="flex items-center mt-4">
+            <a href="#" className="block relative">
               <img
                 alt="profil"
                 src="https://img.freepik.com/free-photo/young-handsome-man-isolated-white-background_185193-82024.jpg?t=st=1658584176~exp=1658584776~hmac=722d922409729aa341bee966de291e133e9df5224d41865c3463180c3d7a0d93&w=740"
-                class="mx-auto object-cover rounded-full h-10 w-10 "
+                className="mx-auto object-cover rounded-full h-10 w-10 "
               />
             </a>
-            <div class="flex flex-col ml-2 justify-between">
-              <span class="font-semibold text-[#1990A2] text-sm">
+            <div className="flex flex-col ml-2 justify-between">
+              <span className="font-semibold text-[#1990A2] text-sm">
                 Firaol Birhanu
               </span>
-              <span class=" text-xs flex items-center">
+              <span className=" text-xs flex items-center">
                 employee of yoya
-                <img src="/icons/rocket.svg" class="ml-2 h-4 w-4" />
+                <img src="/icons/rocket.svg" className="ml-2 h-4 w-4" />
               </span>
             </div>
           </div>
         </div>
-        <div class="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
-          <p class="text-black ">
-            <span class="font-bold text-indigo-500 text-lg">“</span>
+        <div className="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
+          <p className="text-black ">
+            <span className="font-bold text-indigo-500 text-lg">“</span>
             To get social media testimonials like these, keep your customers
             engaged with your social media accounts by posting regularly
             yourself
-            <span class="font-bold text-indigo-500 text-lg">”</span>
+            <span className="font-bold text-indigo-500 text-lg">”</span>
           </p>
-          <div class="flex items-center mt-4">
-            <a href="#" class="block relative">
+          <div className="flex items-center mt-4">
+            <a href="#" className="block relative">
               <img
                 alt="profil"
                 src="https://img.freepik.com/free-photo/young-handsome-man-isolated-white-background_185193-82024.jpg?t=st=1658584176~exp=1658584776~hmac=722d922409729aa341bee966de291e133e9df5224d41865c3463180c3d7a0d93&w=740"
-                class="mx-auto object-cover rounded-full h-10 w-10 "
+                className="mx-auto object-cover rounded-full h-10 w-10 "
               />
             </a>
-            <div class="flex flex-col ml-2 justify-between">
-              <span class="font-semibold text-[#1990A2] text-sm">
+            <div className="flex flex-col ml-2 justify-between">
+              <span className="font-semibold text-[#1990A2] text-sm">
                 Firaol Birhanu
               </span>
-              <span class="text-xs flex items-center">
+              <span className="text-xs flex items-center">
                 Customer
-                <img src="/icons/rocket.svg" class="ml-2 h-4 w-4" />
+                <img src="/icons/rocket.svg" className="ml-2 h-4 w-4" />
               </span>
             </div>
           </div>
@@ -482,9 +452,9 @@ function Home() {
 
       {/* contact us */}
 
-      <section class="text-gray-600 body-font relative">
-        <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
-          <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+      <section className="text-gray-600 body-font relative">
+        <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+          <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             {/* <iframe
               width="100%"
               height="100%"
@@ -497,71 +467,79 @@ function Home() {
               src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
               style="filter: grayscale(1) contrast(1.2) opacity(0.4);"
             ></iframe> */}
-            <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
-              <div class="lg:w-1/2 px-6">
-                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">
+            <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+              <div className="lg:w-1/2 px-6">
+                <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
                   ADDRESS
                 </h2>
-                <p class="mt-1">
+                <p className="mt-1">
                   Photo booth tattooed prism, portland taiyaki hoodie neutra
                   typewriter
                 </p>
               </div>
-              <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
-                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">
+              <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
+                <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
                   EMAIL
                 </h2>
-                <a class="text-indigo-500 leading-relaxed">example@email.com</a>
-                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
+                <a className="text-indigo-500 leading-relaxed">
+                  example@email.com
+                </a>
+                <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                   PHONE
                 </h2>
-                <p class="leading-relaxed">123-456-7890</p>
+                <p className="leading-relaxed">123-456-7890</p>
               </div>
             </div>
           </div>
-          <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-            <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
+          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+            <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
               Feedback
             </h2>
-            <p class="leading-relaxed mb-5 text-gray-600">
+            <p className="leading-relaxed mb-5 text-gray-600">
               Post-ironic portland shabby chic echo park, banjo fashion axe
             </p>
-            <div class="relative mb-4">
-              <label for="name" class="leading-7 text-sm text-gray-600">
+            <div className="relative mb-4">
+              <label htmlFor="name" className="leading-7 text-sm text-gray-600">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div class="relative mb-4">
-              <label for="email" class="leading-7 text-sm text-gray-600">
+            <div className="relative mb-4">
+              <label
+                htmlFor="email"
+                className="leading-7 text-sm text-gray-600"
+              >
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div class="relative mb-4">
-              <label for="message" class="leading-7 text-sm text-gray-600">
+            <div className="relative mb-4">
+              <label
+                htmlFor="message"
+                className="leading-7 text-sm text-gray-600"
+              >
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Button
             </button>
-            <p class="text-xs text-gray-500 mt-3">
+            <p className="text-xs text-gray-500 mt-3">
               Chicharrones blog helvetica normcore iceland tousled brook viral
               artisan.
             </p>
