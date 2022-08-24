@@ -114,7 +114,7 @@ function Home() {
                 </h2>
                 <p className="leading-relaxed text-base">
                   Fingerstache flexitarian street art 8-bit waist co, subway
-                  tile poke farm.
+                  tile poke farm. Lorem ipsum dolor sit amet consectetur
                 </p>
               </div>
             </motion.div>
@@ -195,7 +195,7 @@ function Home() {
       </section>
 
       {/* Testimonioal */}
-      <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  h-20 font-semibold text-gray-900 flex justify-center gap-2 ">
+      <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
         What patients say <h1 className="inline text-[#1990A2]">About YOYA</h1>
       </div>
 
@@ -280,13 +280,13 @@ function Home() {
         </div>
       </div>
       {/* news feed */}
-      <section className="py-6 sm:py-12 ">
-        <div className="container p-6 mx-auto space-y-8">
+      <section className=" ">
+        <div className="container  mx-auto space-y-8">
           <div className="space-y-2 text-center">
-            <h2 className="text-3xl font-bold">Partem reprimique an pro</h2>
-            <p className="font-serif text-sm ">
-              Qualisque erroribus usu at, duo te agam soluta mucius.
-            </p>
+            <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
+              News
+              <h1 className="inline text-[#1990A2]">Feed</h1>
+            </div>
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             <article className="flex flex-col ">
@@ -432,7 +432,11 @@ function Home() {
       {/* contact us */}
 
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  h-20 font-semibold text-gray-900 flex justify-center gap-2 ">
+          Contact
+          <h1 className="inline text-[#1990A2]">US</h1>
+        </div>
+        <div className="container px-5 py-5 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             {/* <iframe
               width="100%"
@@ -515,7 +519,7 @@ function Home() {
                 className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button className="text-white bg-[#1990A2] border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Button
             </button>
             <p className="text-xs text-gray-500 mt-3">
