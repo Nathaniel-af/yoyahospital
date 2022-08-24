@@ -1,6 +1,5 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import Nav from "../components/Nav";
 import Swipper from "../components/swiper";
 import Typed from "react-typed";
@@ -11,8 +10,7 @@ import image4 from "../assets/services/image4.png";
 import image5 from "../assets/services/image5.png";
 import image6 from "../assets/services/image6.png";
 import aboutus from "../assets/aboutus.png";
-import { useEffect } from "react";
-const Variants = {
+const animate = {
   hidden: {
     opacity: 0,
     x: "-100vw",
@@ -20,32 +18,11 @@ const Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: "spring", delay: 0.5, duration: 0.6 },
+    transition: { type: "spring", delay: 0.5, duration: 2 },
   },
 };
 
 function Home() {
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-  });
-  const animation = useAnimation();
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 1,
-          bounce: 0.3,
-        },
-      });
-    }
-    if (!inView) {
-      animation.start({ x: "-100vw" });
-    }
-    console.log("use effect hook , inview=", inView);
-  }, [inView]); /*  */
-
   return (
     <>
       <Nav />
@@ -61,8 +38,13 @@ function Home() {
               YOYA Hospital offers the following services
             </p>
           </div>
-          <div ref={ref} className="flex flex-wrap -m-4">
-            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+          <motion.div
+            className="flex flex-wrap -m-4"
+            initial={"hidden"}
+            whileInView={"visible"}
+            transition={{ staggerChildren: 0.5 }}
+          >
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
               <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
                 <div className=" inline-flex items-center justify-center rounded-full ">
                   <img src={image1} alt="" />
@@ -77,7 +59,7 @@ function Home() {
                 </p>
               </div>
             </motion.div>
-            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
               <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
                 <div className=" inline-flex items-center justify-center rounded-full">
                   <img src={image2} alt="" />
@@ -92,7 +74,7 @@ function Home() {
                 </p>
               </div>
             </motion.div>
-            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
               <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full mb-4 ">
                   <img src={image3} alt="" />
@@ -107,11 +89,8 @@ function Home() {
                 </p>
               </div>
             </motion.div>
-            <motion.div
-              className="xl:w-1/3 md:w-1/2 p-4"
-              ref={ref}
-              animate={animation}
-            >
+
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
               <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image6} alt="" />
@@ -125,7 +104,7 @@ function Home() {
                 </p>
               </div>
             </motion.div>
-            <motion.div className="xl:w-1/3 md:w-1/2 p-4 " animate={animation}>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4 " variants={animate}>
               <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image5} alt="" />
@@ -139,7 +118,7 @@ function Home() {
                 </p>
               </div>
             </motion.div>
-            <motion.div className="xl:w-1/3 md:w-1/2 p-4" animate={animation}>
+            <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
               <div className="border border-gray-200 p-6 rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image4} alt="" />
@@ -153,7 +132,7 @@ function Home() {
                 </p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* About us */}
