@@ -18,7 +18,7 @@ const animate = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: "spring", delay: 0.5, duration: 2 },
+    transition: { type: "spring", delay: 0.1, duration: 1.8, bounce: 0.4 },
   },
 };
 
@@ -138,7 +138,7 @@ function Home() {
       {/* About us */}
 
       <section className="text-gray-600 body-font ">
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
               // class="object-cover object-center rounded md:h-80 w-[100%] sm:w-full sm:h-full"
@@ -161,7 +161,7 @@ function Home() {
               Placeat!.....
             </p>
             <div className="flex justify-center">
-              <button className="inline-flex text-white hover:bg-indigo-500 border-0 py-2 px-6 focus:outline-none bg-[#1990A2] rounded text-lg">
+              <button className="inline-flex text-white hover:bg-indigo-400 border-0 py-2 px-6 focus:outline-none bg-[#1990A2] rounded text-lg ">
                 READ MORE
               </button>
             </div>

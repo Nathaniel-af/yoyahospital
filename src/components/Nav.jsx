@@ -36,7 +36,7 @@ function Nav() {
 
           <ul className="hidden lg:flex text-[#818181] text-xs md:text-sm font-semibold uppercase">
             <li className="p-4 text-[#1990A2]">Home</li>
-            <li className="p-4">About us 😄 </li>
+            <li className="p-4">About us </li>
             <li className="p-4">services</li>
             <li className="p-4">Our Doctors</li>
             <li className="p-4">Blog</li>
