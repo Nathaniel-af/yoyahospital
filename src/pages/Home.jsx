@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import Nav from "../components/Nav";
 import Swipper from "../components/swiper";
 import Typed from "react-typed";
-import image1 from "../assets/services/image1.png";
-import image2 from "../assets/services/image2.png";
-import image3 from "../assets/services/image3.png";
-import image4 from "../assets/services/image4.png";
-import image5 from "../assets/services/image5.png";
-import image6 from "../assets/services/image6.png";
+import image1 from "../assets/services/image1-min.png";
+import image2 from "../assets/services/image2-min.png";
+import image3 from "../assets/services/image3-min.png";
+import image4 from "../assets/services/image4-min.png";
+import image5 from "../assets/services/image5-min.png";
+import image6 from "../assets/services/image6-min.png";
 import aboutus from "../assets/aboutus.png";
 const animate = {
   hidden: {

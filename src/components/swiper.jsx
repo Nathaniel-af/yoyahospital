@@ -5,14 +5,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
-import poster1 from "../assets/Swiperassets/poster2.jpg";
-import poster2 from "../assets/Swiperassets/poster3.jpg";
-import poster3 from "../assets/Swiperassets/poster4.jpg";
-import poster4 from "../assets/Swiperassets/poster5.jpg";
-import poster5 from "../assets/Swiperassets/poster6.jpg";
-import poster7 from "../assets/Swiperassets/poster8.jpg";
-import poster8 from "../assets/Swiperassets/poster9.jpg";
-import poster9 from "../assets/Swiperassets/poster10 .jpg";
+import poster1 from "../assets/Swiperassets/Frame1-minn.png";
+import poster2 from "../assets/Swiperassets/Frame2-minn.png";
+import poster3 from "../assets/Swiperassets/Frame3-minn.png";
+import poster4 from "../assets/Swiperassets/Frame4-minn.png";
+import poster5 from "../assets/Swiperassets/Frame5-minn.png";
+import poster7 from "../assets/Swiperassets/Frame6-minn.png";
+import poster8 from "../assets/Swiperassets/Frame7-minn.png";
+// import poster9 from "../assets/Swiperassets/Frame2-minn.png;
 import seized from "../assets/Swiperassets/SIZED.jpg";
 function Swipper() {
   const images = [
@@ -23,7 +23,6 @@ function Swipper() {
     poster5,
     poster7,
     poster8,
-    poster9,
     seized,
   ];
 
