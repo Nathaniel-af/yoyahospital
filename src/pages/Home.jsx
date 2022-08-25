@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import video from "../assets/video.mp4";
 import Nav from "../components/Nav";
 import Swipper from "../components/swiper";
 import Typed from "react-typed";
+import footer from "../assets/footer.svg";
+import logo from "../assets/logo.png";
 import image1 from "../assets/services/image1-min.png";
 import image2 from "../assets/services/image2-min.png";
 import image3 from "../assets/services/image3-min.png";
@@ -147,25 +150,44 @@ function Home() {
               src={aboutus}
             />
           </div>
-          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center  justify-center ">
+          <motion.div
+            className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center  justify-center "
+            transition={{ staggerChildren: 0.5 }}
+          >
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               ABOUT US
               <br className="" />
             </h1>
-            <p className="mb-8 leading-relaxed text-justify">
-              <p className="inline border-b-2 text-gray-800">OUR STORY</p> YOYA
-              Hospital is established Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Nihil consectetur omnis suscipit repudiandae,
-              voluptas possimus ea architecto reiciendis soluta aperiam, tenetur
-              magnam sequi optio maxime dolorum incidunt atque vitae.
-              Placeat!.....
-            </p>
+            <motion.span
+              className="mb-8 leading-relaxed text-justify"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: "spring",
+                duration: 0.95,
+                bounce: 0.2,
+                delay: 0.2,
+              }}
+            >
+              <p className="inline border-b-2 text-[#1990A2] font-semibold">
+                OUR STORY
+              </p>{" "}
+              YOYA Hospital is a hospital founded by specialists and
+              sub-specialists with a commitment to providing high-quality
+              medical care in a facility that provides affordable and accessible
+              quality health care to the public, with a strong emphasis on
+              enhancing the dignity of the sick.We rely on our motto,
+              "Excellence is our passion," to provide a healing touch to
+              everyone who enters our hospital. In the same vein, we strive to
+              provide our customers with comprehensive, evidence-based health
+              care.
+            </motion.span>
             <div className="flex justify-center">
               <button className="inline-flex text-white hover:bg-indigo-400 border-0 py-2 px-6 focus:outline-none bg-[#1990A2] rounded text-lg ">
                 READ MORE
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -174,11 +196,7 @@ function Home() {
       <section className="text-gray-600  bg-gray-100">
         <div className=" mx-auto flex px-5 py-5 md:flex-row flex-col md:gap-7 items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-            <img
-              className="object-cover object-center rounded  "
-              alt="hero"
-              src="https://scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/276242238_156328050115085_424367970683167284_n.jpg?stp=dst-jpg_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_ohc=51ZbHuBci7wAX-ygHQ3&_nc_ht=scontent.fadd2-1.fna&oh=00_AT-OAqehxAOJO3n9u2FNcDp_7JwavgJZNEfTeoil_zCZKw&oe=62E08216"
-            />
+            <video src={video} controls autoPlay></video>
           </div>
           <div className=" md:py-24 py-10 px-20 sm:px-0  w-full md:w-1/2   flex flex-col justify-center items-center text-center bg-white rounded-xl shadow-lg">
             <p className=" font-pacifico   leading-relaxed text-base  md:text-xl lg:text-2xl text-gray-600">
@@ -199,15 +217,28 @@ function Home() {
         What patients say <h1 className="inline text-[#1990A2]">About YOYA</h1>
       </div>
 
-      <div className="w-full flex flex-col md:flex-row gap-4 mb-8 md:mb-0 flex-between items-center p-8">
+      <motion.div
+        className="w-full flex flex-col md:flex-row gap-4 mb-8 md:mb-0 flex-between items-center p-8"
+        transition={{ staggerChildren: 0.5 }}
+      >
         <div className="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
-          <p className="text-black ">
+          <motion.p
+            className="text-black "
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              duration: 1,
+              bounce: 0.4,
+              delay: 0.2,
+            }}
+          >
             <span className="font-bold text-indigo-500 text-lg">“</span>
             To get social media testimonials like these, keep your customers
             engaged with your social media accounts by posting regularly
             yourself
             <span className="font-bold text-indigo-500 text-lg">”</span>
-          </p>
+          </motion.p>
           <div className="flex items-center mt-4">
             <a href="#" className="block relative">
               <img
@@ -225,13 +256,23 @@ function Home() {
           </div>
         </div>
         <div className="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
-          <p className="text-black ">
+          <motion.p
+            className="text-black "
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              duration: 0.95,
+              bounce: 0.4,
+              delay: 0.2,
+            }}
+          >
             <span className="font-bold text-indigo-500 text-lg">“</span>
             To get social media testimonials like these, keep your customers
             engaged with your social media accounts by posting regularly
             yourself
             <span className="font-bold text-indigo-500 text-lg">”</span>
-          </p>
+          </motion.p>
           <div className="flex items-center mt-4">
             <a href="#" className="block relative">
               <img
@@ -252,13 +293,23 @@ function Home() {
           </div>
         </div>
         <div className="bg-gray-100  w-72 shadow-lg mx-auto rounded-xl p-4">
-          <p className="text-black ">
+          <motion.p
+            className="text-black "
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              duration: 0.95,
+              bounce: 0.4,
+              delay: 0.2,
+            }}
+          >
             <span className="font-bold text-indigo-500 text-lg">“</span>
             To get social media testimonials like these, keep your customers
             engaged with your social media accounts by posting regularly
             yourself
             <span className="font-bold text-indigo-500 text-lg">”</span>
-          </p>
+          </motion.p>
           <div className="flex items-center mt-4">
             <a href="#" className="block relative">
               <img
@@ -278,18 +329,18 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* news feed */}
       <section className=" ">
         <div className="container  mx-auto space-y-8">
           <div className="space-y-2 text-center">
             <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
-              News
-              <h1 className="inline text-[#1990A2]">Feed</h1>
+              Our Recent
+              <h1 className="inline text-[#1990A2]">News</h1>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-            <article className="flex flex-col ">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 px-5">
+            <article className="flex flex-col bg-gray-50 hover:shadow-lg">
               <a
                 rel="noopener noreferrer"
                 href="#"
@@ -323,7 +374,7 @@ function Home() {
                 </div>
               </div>
             </article>
-            <article className="flex flex-col ">
+            <article className="flex flex-col bg-gray-50 hover:shadow-lg">
               <a
                 rel="noopener noreferrer"
                 href="#"
@@ -357,7 +408,7 @@ function Home() {
                 </div>
               </div>
             </article>
-            <article className="flex flex-col ">
+            <article className="flex flex-col bg-gray-50 hover:shadow-lg ">
               <a
                 rel="noopener noreferrer"
                 href="#"
@@ -391,7 +442,7 @@ function Home() {
                 </div>
               </div>
             </article>
-            <article className="flex flex-col">
+            <article className="flex flex-col bg-gray-50 hover:shadow-lg">
               <a
                 rel="noopener noreferrer"
                 href="#"
@@ -456,8 +507,9 @@ function Home() {
                   ADDRESS
                 </h2>
                 <p className="mt-1">
-                  Photo booth tattooed prism, portland taiyaki hoodie neutra
-                  typewriter
+                  Adama,Oromia,Ethiopia.
+                  <br />
+                  Near Robi Hotel
                 </p>
               </div>
               <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
@@ -465,12 +517,12 @@ function Home() {
                   EMAIL
                 </h2>
                 <a className="text-indigo-500 leading-relaxed">
-                  example@email.com
+                  support@yoyahospital.org
                 </a>
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                   PHONE
                 </h2>
-                <p className="leading-relaxed">123-456-7890</p>
+                <p className="leading-relaxed">0228 125646</p>
               </div>
             </div>
           </div>
@@ -479,7 +531,8 @@ function Home() {
               Feedback
             </h2>
             <p className="leading-relaxed mb-5 text-gray-600">
-              Post-ironic portland shabby chic echo park, banjo fashion axe
+              We value your feedback and encourage you to contact us if you have
+              any.
             </p>
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
@@ -520,11 +573,10 @@ function Home() {
               ></textarea>
             </div>
             <button className="text-white bg-[#1990A2] border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              Button
+              SEND
             </button>
             <p className="text-xs text-gray-500 mt-3">
-              Chicharrones blog helvetica normcore iceland tousled brook viral
-              artisan.
+              yoya hospital customer support
             </p>
           </div>
         </div>
@@ -532,143 +584,113 @@ function Home() {
 
       {/* footer */}
 
-      <footer className="px-4 divide-y ">
-        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div className="lg:w-1/3">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex justify-center space-x-3 lg:justify-start"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 32 32"
-                  fill="currentColor"
-                  className="flex-shrink-0 w-5 h-5 rounded-full "
-                >
-                  <path d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"></path>
-                </svg>
+      <footer className="">
+        <div className>
+          <div className="relative flex justify-start md:justify-center md:items-end ">
+            <img
+              className="absolute object-cover top-10 h-full w-full xl:mt-10 z-0"
+              src={footer}
+              alt="background"
+            />
+            <div className="flex pt-36 md:pt-32 lg:pt-40 xl:pt-96   px-4 md:px-6  xl:px-20 flex-col justify-start items-start md:justify-center md:items-center relative z-10">
+              <div className="flex  flex-col items-start justify-start xl:justify-center xl:space-x-8 xl:flex-row">
+                <div className="flex justify-start items-center space-x-4">
+                  <div className="cursor-pointer">
+                    <img className="h-24" src={logo} alt="logo" />
+                  </div>
+                  <p className="w-60 text-xl xl:text-2xl font-semibold leading-normal text-white">
+                    YOYA HOSPITAL
+                  </p>
+                </div>
+                <div className="mt-12 xl:mt-0 grid grid-cols-1 sm:grid-cols-3 gap-y-12 sm:gap-y-0 w-full md:w-auto sm:gap-x-20 md:gap-x-28 xl:gap-8">
+                  <div className="sm:w-40 md:w-auto xl:w-72 flex justify-start items-start flex-col space-y-6">
+                    <h2 className="text-base xl:text-xl font-bold xl:font-semibold leading-4 xl:leading-5 text-white">
+                      Services
+                    </h2>
+                    <button className="text-left text-base hover:text-gray-400 leading-none text-gray-100">
+                      About Us
+                    </button>
+                    <button className="text-left text-base hover:text-gray-400 leading-none text-gray-100">
+                      our Doctors
+                    </button>
+                    <button className="text-left text-base hover:text-gray-400 leading-none text-gray-100">
+                      Sth sth
+                    </button>
+                    <button className="text-left text-base hover:text-gray-400 leading-none text-gray-100">
+                      News Feed
+                    </button>
+                  </div>
+                  <div className="bg-white"></div>
+                </div>
               </div>
-              <span className="self-center text-2xl font-semibold">
-                Brand name
-              </span>
-            </a>
-          </div>
-          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase ">Product</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Integrations
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase ">Company</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="uppercase ">Developers</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Public API
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Guides
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <div className="uppercase dark:text-gray-50">Social media</div>
-              <div className="flex justify-start space-x-3">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  title="Facebook"
-                  className="flex items-center p-1"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    className="w-5 h-5 fill-current"
-                  >
-                    <path d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"></path>
-                  </svg>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  title="Twitter"
-                  className="flex items-center p-1"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 fill-current"
-                  >
-                    <path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"></path>
-                  </svg>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  title="Instagram"
-                  className="flex items-center p-1"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 32 32"
-                    fill="currentColor"
-                    className="w-5 h-5 fill-current"
-                  >
-                    <path d="M16 0c-4.349 0-4.891 0.021-6.593 0.093-1.709 0.084-2.865 0.349-3.885 0.745-1.052 0.412-1.948 0.959-2.833 1.849-0.891 0.885-1.443 1.781-1.849 2.833-0.396 1.020-0.661 2.176-0.745 3.885-0.077 1.703-0.093 2.244-0.093 6.593s0.021 4.891 0.093 6.593c0.084 1.704 0.349 2.865 0.745 3.885 0.412 1.052 0.959 1.948 1.849 2.833 0.885 0.891 1.781 1.443 2.833 1.849 1.020 0.391 2.181 0.661 3.885 0.745 1.703 0.077 2.244 0.093 6.593 0.093s4.891-0.021 6.593-0.093c1.704-0.084 2.865-0.355 3.885-0.745 1.052-0.412 1.948-0.959 2.833-1.849 0.891-0.885 1.443-1.776 1.849-2.833 0.391-1.020 0.661-2.181 0.745-3.885 0.077-1.703 0.093-2.244 0.093-6.593s-0.021-4.891-0.093-6.593c-0.084-1.704-0.355-2.871-0.745-3.885-0.412-1.052-0.959-1.948-1.849-2.833-0.885-0.891-1.776-1.443-2.833-1.849-1.020-0.396-2.181-0.661-3.885-0.745-1.703-0.077-2.244-0.093-6.593-0.093zM16 2.88c4.271 0 4.781 0.021 6.469 0.093 1.557 0.073 2.405 0.333 2.968 0.553 0.751 0.291 1.276 0.635 1.844 1.197 0.557 0.557 0.901 1.088 1.192 1.839 0.22 0.563 0.48 1.411 0.553 2.968 0.072 1.688 0.093 2.199 0.093 6.469s-0.021 4.781-0.099 6.469c-0.084 1.557-0.344 2.405-0.563 2.968-0.303 0.751-0.641 1.276-1.199 1.844-0.563 0.557-1.099 0.901-1.844 1.192-0.556 0.22-1.416 0.48-2.979 0.553-1.697 0.072-2.197 0.093-6.479 0.093s-4.781-0.021-6.48-0.099c-1.557-0.084-2.416-0.344-2.979-0.563-0.76-0.303-1.281-0.641-1.839-1.199-0.563-0.563-0.921-1.099-1.197-1.844-0.224-0.556-0.48-1.416-0.563-2.979-0.057-1.677-0.084-2.197-0.084-6.459 0-4.26 0.027-4.781 0.084-6.479 0.083-1.563 0.339-2.421 0.563-2.979 0.276-0.761 0.635-1.281 1.197-1.844 0.557-0.557 1.079-0.917 1.839-1.199 0.563-0.219 1.401-0.479 2.964-0.557 1.697-0.061 2.197-0.083 6.473-0.083zM16 7.787c-4.541 0-8.213 3.677-8.213 8.213 0 4.541 3.677 8.213 8.213 8.213 4.541 0 8.213-3.677 8.213-8.213 0-4.541-3.677-8.213-8.213-8.213zM16 21.333c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333s-2.385 5.333-5.333 5.333zM26.464 7.459c0 1.063-0.865 1.921-1.923 1.921-1.063 0-1.921-0.859-1.921-1.921 0-1.057 0.864-1.917 1.921-1.917s1.923 0.86 1.923 1.917z"></path>
-                  </svg>
-                </a>
+              <div className="mt-12 flex  xl:justify-between xl:flex-row flex-col-reverse items-center xl:items-start w-full ">
+                <p className="mt-10 md:mt-12 xl:mt-0 text-sm leading-none text-white">
+                  © 2022 YOYA Hospital. All rights reserved.
+                </p>
+
+                <div className="flex  justify-start md:justify-end items-start  w-full md:w-auto md:items-center space-x-6 ">
+                  <button className="text-white hover:text-gray-200 w-6">
+                    <svg
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M23.25 5.13282C22.406 5.49955 21.513 5.74116 20.5992 5.85001C21.5595 5.28769 22.2817 4.39434 22.6303 3.33751C21.7224 3.86841 20.7307 4.24092 19.6978 4.43907C19.2629 3.98322 18.7397 3.62059 18.1603 3.3732C17.5808 3.12581 16.9571 2.99884 16.327 3.00001C13.7761 3.00001 11.7117 5.03438 11.7117 7.5422C11.7099 7.89102 11.7499 8.23881 11.8308 8.57813C10.0016 8.49238 8.2104 8.02575 6.57187 7.2081C4.93333 6.39044 3.48351 5.23977 2.31516 3.8297C1.90527 4.52069 1.6885 5.30909 1.6875 6.11251C1.6875 7.68751 2.50922 9.0797 3.75 9.89532C3.01487 9.87787 2.29481 9.68331 1.65094 9.32813V9.38438C1.65094 11.5875 3.24469 13.4203 5.35406 13.8375C4.9574 13.9433 4.54864 13.9968 4.13812 13.9969C3.84683 13.9974 3.5562 13.9691 3.27047 13.9125C3.85687 15.7172 5.56359 17.0297 7.58531 17.0672C5.94252 18.3333 3.9256 19.0175 1.85156 19.0125C1.48341 19.012 1.11561 18.99 0.75 18.9469C2.85993 20.2942 5.31255 21.0068 7.81594 21C16.3172 21 20.9616 14.0766 20.9616 8.07188C20.9616 7.87501 20.9564 7.67813 20.947 7.48595C21.8485 6.84472 22.6283 6.04787 23.25 5.13282V5.13282Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                  <button className="text-white hover:text-gray-200 w-6">
+                    <svg
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M22.5 12.0645C22.5 6.26602 17.7984 1.56445 12 1.56445C6.20156 1.56445 1.5 6.26602 1.5 12.0645C1.5 17.3051 5.33906 21.649 10.3594 22.4374V15.1005H7.69266V12.0645H10.3594V9.75117C10.3594 7.12008 11.9273 5.66555 14.3255 5.66555C15.4744 5.66555 16.6763 5.87086 16.6763 5.87086V8.45508H15.3516C14.048 8.45508 13.6402 9.26414 13.6402 10.0957V12.0645H16.552L16.087 15.1005H13.6406V22.4384C18.6609 21.6504 22.5 17.3065 22.5 12.0645Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                  <button className="text-white hover:text-gray-200 w-6">
+                    <svg
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 1.5C6.20297 1.5 1.5 6.20297 1.5 12C1.5 17.797 6.20297 22.5 12 22.5C17.797 22.5 22.5 17.8022 22.5 12C22.5 6.19781 17.797 1.5 12 1.5ZM18.6666 6.33984C19.8815 7.76805 20.6046 9.54925 20.7291 11.4202C18.8367 11.3217 16.5727 11.3217 14.7572 11.4914C14.5275 10.9116 14.2922 10.343 14.0353 9.79594C16.1288 8.88844 17.7422 7.69594 18.6666 6.33984ZM12 3.24984C14.0395 3.24634 16.0156 3.95866 17.5837 5.26266C16.6322 6.46547 15.1392 7.51266 13.2797 8.30297C12.2625 6.42188 11.092 4.80328 9.84375 3.52875C10.5482 3.3469 11.2725 3.25322 12 3.24984V3.24984ZM8.04047 4.20703C9.30375 5.46469 10.4906 7.06641 11.5298 8.94141C9.55547 9.54469 7.29141 9.89062 4.875 9.89062C4.41562 9.89062 3.9675 9.87422 3.52453 9.84656C3.83266 8.63935 4.3949 7.5118 5.17367 6.53927C5.95244 5.56673 6.92981 4.77161 8.04047 4.20703V4.20703ZM3.26625 11.5842C3.76406 11.6063 4.26703 11.617 4.77562 11.6119C7.53187 11.5791 10.0969 11.1469 12.3009 10.44C12.5088 10.8722 12.7056 11.3152 12.8916 11.7689C12.6252 11.8272 12.3637 11.9056 12.1092 12.0033C9.09609 13.2689 6.72281 15.3084 5.4375 17.775C4.02813 16.1814 3.25007 14.1274 3.24984 12C3.24984 11.8594 3.25547 11.7211 3.26625 11.5842ZM12 20.7502C10.056 20.7525 8.16724 20.1036 6.63516 18.907C7.8 16.5994 9.87797 14.6883 12.4978 13.5037C12.7439 13.3889 13.072 13.2961 13.4494 13.2141C13.7619 14.0778 14.0408 14.9747 14.2861 15.9047C14.6525 17.3083 14.9223 18.7354 15.0938 20.1759C14.1061 20.5543 13.0576 20.7489 12 20.7502V20.7502ZM16.7306 19.3556C16.5595 17.9001 16.2871 16.4584 15.9155 15.0408C15.728 14.3297 15.5166 13.6406 15.2869 12.968C17.0039 12.8273 19.0603 12.8475 20.6953 12.968C20.5512 14.2606 20.1206 15.5047 19.4347 16.6097C18.7488 17.7148 17.825 18.6529 16.7306 19.3556V19.3556Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                  <button className="text-white hover:text-gray-200 w-6">
+                    <svg
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 1.5C6.20156 1.5 1.5 6.32344 1.5 12.2672C1.5 17.025 4.50937 21.0562 8.68125 22.4812C8.73977 22.494 8.79949 22.5002 8.85938 22.5C9.24844 22.5 9.39844 22.2141 9.39844 21.9656C9.39844 21.7078 9.38906 21.0328 9.38437 20.1328C9.03705 20.2142 8.68173 20.2567 8.325 20.2594C6.30469 20.2594 5.84531 18.6891 5.84531 18.6891C5.36719 17.4469 4.67813 17.1141 4.67813 17.1141C3.76406 16.4719 4.67344 16.4531 4.74375 16.4531H4.74844C5.80313 16.5469 6.35625 17.5687 6.35625 17.5687C6.88125 18.4875 7.58437 18.7453 8.2125 18.7453C8.62783 18.737 9.03673 18.6412 9.4125 18.4641C9.50625 17.7703 9.77812 17.2969 10.0781 17.025C7.74844 16.7531 5.29688 15.8297 5.29688 11.7047C5.29688 10.5281 5.70469 9.56719 6.375 8.81719C6.26719 8.54531 5.90625 7.44844 6.47812 5.96719C6.55483 5.94883 6.63368 5.94095 6.7125 5.94375C7.09219 5.94375 7.95 6.08906 9.36563 7.07344C11.0857 6.59218 12.9049 6.59218 14.625 7.07344C16.0406 6.08906 16.8984 5.94375 17.2781 5.94375C17.357 5.94095 17.4358 5.94883 17.5125 5.96719C18.0844 7.44844 17.7234 8.54531 17.6156 8.81719C18.2859 9.57187 18.6937 10.5328 18.6937 11.7047C18.6937 15.8391 16.2375 16.7484 13.8984 17.0156C14.2734 17.3484 14.6109 18.0047 14.6109 19.0078C14.6109 20.4469 14.5969 21.6094 14.5969 21.9609C14.5969 22.2141 14.7422 22.5 15.1312 22.5C15.1942 22.5003 15.2571 22.494 15.3187 22.4812C19.4953 21.0562 22.5 17.0203 22.5 12.2672C22.5 6.32344 17.7984 1.5 12 1.5Z"
+                        fill="current"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="py-6 text-sm text-center dark:text-gray-400">
-          © 2022 YOYA Hospital. All rights reserved.
         </div>
       </footer>
     </>
