@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import "mapbox-gl/dist/mapbox-gl.css";
-import Map from "react-map-gl";
 import video from "../assets/video.mp4";
 import Nav from "../components/Nav";
 import Swipper from "../components/swiper";
@@ -15,6 +13,10 @@ import image4 from "../assets/services/image4-min.png";
 import image5 from "../assets/services/image5-min.png";
 import image6 from "../assets/services/image6-min.png";
 import aboutus from "../assets/aboutus.png";
+import Group1 from "../assets/whyus/Group1.svg";
+import Group2 from "../assets/whyus/Group2.svg";
+import Group3 from "../assets/whyus/Group3.svg";
+import { GrNext } from "react-icons/gr";
 const animate = {
   hidden: {
     opacity: 0,
@@ -140,9 +142,29 @@ function Home() {
           </motion.div>
         </div>
       </section>
+      {/* why us */}
+      <div className="title-font sm:text-2xl text-xl my-6 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
+        WHY US
+      </div>
+      <div className="flex px-5 flex-col md:flex-row mt-10 text-white">
+        <div className="bg-blue-400 w-full md:w-1/3 h-64 flex flex-col items-center justify-center">
+          <img className="h-24 w-16" src={Group1} alt="" />
+          <h1>26 specialist</h1>
+          <button className=""> Find out More</button>
+        </div>
+        <div className="bg-teal-300 w-full md:w-1/3 h-64 flex flex-col items-center justify-center">
+          <img className="h-24 w-16" src={Group2} alt="" />
+          <h1> Fully equipped infrustructure </h1>
+        </div>
+        <div className="bg-teal-600 w-full md:w-1/3 h-64 flex flex-col items-center justify-center">
+          <img className="h-24 w-16" src={Group3} alt="" />{" "}
+          <h1>24 Hours Hospitable service</h1>
+          <button className="bg"> Find out More</button>
+        </div>
+      </div>
       {/* About us */}
 
-      <section className="text-gray-600 body-font ">
+      <section className="text-gray-600 body-font mt-2">
         <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
@@ -195,12 +217,12 @@ function Home() {
 
       {/* video and typed text */}
 
-      <section className="text-gray-600  bg-gray-100">
+      <section className="text-gray-600  ">
         <div className=" mx-auto flex px-5 py-5 md:flex-row flex-col md:gap-7 items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <video src={video} controls autoPlay></video>
           </div>
-          <div className=" md:py-24 py-10 px-20 sm:px-0  w-full md:w-1/2   flex flex-col justify-center items-center text-center bg-white rounded-xl shadow-lg">
+          <div className=" md:py-24 py-10 px-20 sm:px-0  w-full md:w-1/2   flex flex-col justify-center items-center text-center  rounded-xl shadow-lg">
             <p className=" font-pacifico   leading-relaxed text-base  md:text-xl lg:text-2xl text-gray-600">
               <p className="text-[#1990A2] inline">" </p>{" "}
               <Typed
@@ -214,8 +236,33 @@ function Home() {
         </div>
       </section>
 
+      {/* banner */}
+
+      <div className="p-6 py-12 bg-gradient-to-r from-sky-500 to-teal-500 mt-16 text-white">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            <h2 className="text-center text-5xl tracking-tighter font-bold">
+              Providing cutting-edge health care to your family
+              <br className="sm:hidden" />
+            </h2>
+
+            <a
+              href="#"
+              rel="noreferrer noopener"
+              className="group px-5 mt-4 lg:mt-0 py-3 rounded-lg block bg-teal-400 hover:bg-teal-300 text-white  "
+            >
+              Make Appointment{" "}
+              <GrNext
+                className="inline group-hover:translate-x-4 group-hover:scale-125 "
+                size={23}
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Testimonioal */}
-      <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
+      <div className="title-font sm:text-2xl text-xl mt-20 mb-6 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
         What patients say <h1 className="inline text-[#1990A2]">About YOYA</h1>
       </div>
 
