@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import "mapbox-gl/dist/mapbox-gl.css";
+import Map from "react-map-gl";
 import video from "../assets/video.mp4";
 import Nav from "../components/Nav";
 import Swipper from "../components/swiper";
@@ -202,7 +204,7 @@ function Home() {
             <p className=" font-pacifico   leading-relaxed text-base  md:text-xl lg:text-2xl text-gray-600">
               <p className="text-[#1990A2] inline">" </p>{" "}
               <Typed
-                strings={["Your Center of Excellence", "Center of Excellence "]}
+                strings={["Excellence is our passion"]}
                 typeSpeed={120}
                 loop
               />{" "}
@@ -488,22 +490,24 @@ function Home() {
           <h1 className="inline text-[#1990A2]">US</h1>
         </div>
         <div className="container px-5 py-5 mx-auto flex sm:flex-nowrap flex-wrap">
-          <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-            {/* <iframe
+          <div className="lg:w-2/3 md:w-1/2S rounded-lg overflow-hidden sm:mr-10 p-28 flex items-end justify-start relative">
+            <iframe
               width="100%"
               height="100%"
-              class="absolute inset-0"
+              className="absolute inset-0"
               frameborder="0"
               title="map"
               marginheight="0"
               marginwidth="0"
               scrolling="no"
-              src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-              style="filter: grayscale(1) contrast(1.2) opacity(0.4);"
-            ></iframe> */}
-            <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.578652733735!2d39.25757541529175!3d8.540220998802674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b210f1cfd3ef7%3A0x62970f3c76619070!2sYoya%20hospital!5e0!3m2!1sen!2set!4v1661762090595!5m2!1sen!2set"
+            ></iframe>
+
+            <div className="bg-[#1990A2] relative flex flex-wrap p-3 rounded shadow-md text-xs md:text-base text-white">
               <div className="lg:w-1/2 px-6">
-                <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
+                <h2 className="title-font font-semibold text-teal-300 tracking-widest text-xs">
                   ADDRESS
                 </h2>
                 <p className="mt-1">
@@ -513,20 +517,18 @@ function Home() {
                 </p>
               </div>
               <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-                <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
+                <h2 className="title-font font-semibold text-teal-300 tracking-widest text-xs">
                   EMAIL
                 </h2>
-                <a className="text-indigo-500 leading-relaxed">
-                  support@yoyahospital.org
-                </a>
-                <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
+                <a className="leading-relaxed">support@yoyahospital.org</a>
+                <h2 className="title-font font-semibold text-teal-300 tracking-widest text-xs mt-4">
                   PHONE
                 </h2>
                 <p className="leading-relaxed">0228 125646</p>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 ">
             <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
               Feedback
             </h2>
