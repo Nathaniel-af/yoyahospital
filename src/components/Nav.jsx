@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsFillTelephoneFill, BsFacebook, BsTelegram } from "react-icons/bs";
 import { BiCalendar } from "react-icons/bi";
 import logo from "../assets/logo.png";
+import { useNavigate, Link } from "react-router-dom";
 
-function Nav() {
+function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
   const [nav, setNav] = useState(true);
 
+  const navigate = useNavigate();
   function handleClick() {
     setNav((prev) => !prev);
   }
+
   return (
     <>
       <div className=" flex relative sm:flex-col justify-between flex-row p-5 sm:p-0 ">
@@ -28,20 +31,37 @@ function Nav() {
           </div>
         </div>
         <div className="bg-white flex justify-end items-center px-14 sm:py-6 ">
-          <img
-            className="absolute h-[70px] w-[80px] md:h-56 md:w-60  md:top-[10px] top-1 left-0 z-30"
-            src={logo}
-            alt=""
-          />
+          <Link to="/">
+            <img
+              className="absolute h-[70px] w-[80px] md:h-56 md:w-60  md:top-[10px] top-1 left-0 z-30"
+              src={logo}
+              alt=""
+            />
+          </Link>
 
           <ul className="hidden lg:flex text-[#818181] text-xs md:text-sm font-semibold uppercase">
-            <li className="p-4 text-[#1990A2]">Home</li>
-            <li className="p-4">About us </li>
-            <li className="p-4">services</li>
-            <li className="p-4">Our Doctors</li>
-            <li className="p-4">Blog</li>
-            <li className="p-4">contact</li>
-            <button className="border-2 border-[#1990A2] text-[#1990A2] rounded-full px-5 py-3 font-bold ml-14 text-center hover:bg-[#1990A2] hover:text-white hover:animate-bounce">
+            <Link to="/">
+              <li className="p-4 text-[#1990A2]">Home</li>
+            </Link>{" "}
+            <Link to="/" onClick={() => handleScroll(aboutref)}>
+              <li className="p-4 cursor-pointer">About us </li>
+            </Link>
+            <Link to="/" onClick={() => handleScroll(serviceref)}>
+              <li className="p-4 cursor-pointer ">services</li>
+            </Link>
+            <Link to="/doctors">
+              <li className="p-4 cursor-pointer">Our Doctors</li>
+            </Link>
+            <Link to="/" onClick={() => handleScroll(blogref)}>
+              <li className="p-4 cursor-pointer">Blog</li>
+            </Link>
+            <Link to="/" onClick={() => handleScroll(contactref)}>
+              <li className="p-4 cursor-pointer">contact</li>
+            </Link>
+            <button
+              onClick={() => navigate("/appointment")}
+              className="border-2 border-[#1990A2] text-[#1990A2] rounded-full px-5 py-3 font-bold ml-14 text-center hover:bg-[#1990A2] hover:text-white hover:animate-pulse"
+            >
               {" "}
               <BiCalendar className="inline mr-1" size={24}></BiCalendar>
               APPOINTMENT
@@ -67,18 +87,45 @@ function Nav() {
         <div
           className={
             !nav
-              ? "fixed left-0 top-0 w-[60%] h-full bg-[#005E6C] ease-in-out duration-700 text-white z-50"
+              ? "fixed left-0 top-0 w-[60%] h-full bg-[#005E6C] ease-in-out duration-700 text-sm text-white z-50"
               : "fixed left-[-100%] "
           }
         >
+          <img className="h-24 mx-auto mt-5" src={logo} alt="" />
           <ul className="uppercase p-4">
-            <li className="p-4">Home</li>
-            <li className="p-4">About us</li>
-            <li className="p-4">services</li>
-            <li className="p-4">Our Doctors</li>
-            <li className="p-4">Blog</li>
-            <li className="p-4">contact</li>
+            <Link to="/">
+              <li className="px-4 py-2">Home </li>
+            </Link>
+
+            <Link to="/" onClick={() => handleScroll(aboutref)}>
+              <li className="px-4 py-2">About us </li>
+            </Link>
+            <Link to="/" onClick={() => handleScroll(serviceref)}>
+              <li className="px-4 py-2">services</li>
+            </Link>
+            <Link to="/">
+              <li className="px-4">Our Doctors</li>
+            </Link>
+            <Link to="/" onClick={() => handleScroll(blogref)}>
+              <li className="px-4 py-2">Blog</li>
+            </Link>
+            <Link to="/" onClick={() => handleScroll(contactref)}>
+              <li className="px-4 py-2">contact</li>
+            </Link>
+            <Link className="text-sm" to="/">
+              <li className="px-4 py-2">APPOINTEMENT</li>
+            </Link>
           </ul>
+          <div className="flex flex-col justify-center items-center gap-2">
+            <BsFillTelephoneFill size={20} />
+            <a href="tel:0228125646">0228 125646</a>
+            <a href="tel:0904073307">0904 073307</a>
+            <a href="tel:0222122032">022 2122032</a>
+            <div className="flex gap-4">
+              <BsFacebook size={24}></BsFacebook>
+              <BsTelegram size={24}></BsTelegram>
+            </div>
+          </div>
         </div>
       </div>
     </>

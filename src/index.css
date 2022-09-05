@@ -28,3 +28,8 @@
 .swiper-pagination-bullet {
   background-color: #00d7f7;
 }
+
+.bgpic {
+  background-image: url("./assets/footer.svg");
+  background-repeat: no-repeat;
+}
