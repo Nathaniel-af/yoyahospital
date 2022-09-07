@@ -765,7 +765,8 @@ function Home() {
         </div>
       </section>
       {/* footer */}
-      <footer className="p-4 h-[300px] w-full mt-8 rounded-lg shadow md:px-20 flex flex-col justify-center bgpic">
+      {/* bgpic */}
+      <footer className="p-4 h-[300px] w-full mt-8 rounded-lg shadow md:px-20 flex flex-col justify-center  bg-teal-700 ">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
             href="https://flowbite.com/"

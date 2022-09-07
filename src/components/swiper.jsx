@@ -30,7 +30,7 @@ function Swipper() {
     return images.map((img) => {
       return (
         <SwiperSlide key={img} className="">
-          <img className="h-full w-full  " src={img} alt="" />
+          <img className="h-full w-full " loading="lazy" src={img} alt="" />
         </SwiperSlide>
       );
     });
