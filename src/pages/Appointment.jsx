@@ -5,10 +5,10 @@ import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
 import axios from "axios";
-import { Context } from "../components/Context";
+//import { Context } from "../components/Context";
 export default function Appointment() {
   const navigate = useNavigate();
-  const { doctors } = Context();
+  //const { doctors } = Context();
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const userSchema = yup.object().shape({
@@ -22,6 +22,7 @@ export default function Appointment() {
       .max(10)
       .matches(phoneRegExp, "Phone number is not valid"),
   });
+  const asd = JSON.parse(localStorage.getItem("physician"));
 
   return (
     <>
@@ -168,7 +169,7 @@ export default function Appointment() {
                         placeholder="Doctor"
                       >
                         <option value="">Doctors</option>
-                        {doctors.map((data) => (
+                        {asd.map((data) => (
                           <option value={data.id}>{data.name} </option>
                         ))}
                       </Field>

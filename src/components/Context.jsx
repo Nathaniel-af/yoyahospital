@@ -8,6 +8,7 @@ export function ContextProvider({ children }) {
     async function callapi() {
       await axios.get(`${import.meta.env.VITE_API}physicians/`).then((res) => {
         setDoctors(res.data);
+        localStorage.setItem("physician", JSON.stringify(res.data));
       });
     }
     callapi();

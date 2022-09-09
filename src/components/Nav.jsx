@@ -93,27 +93,51 @@ function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
         >
           <img className="h-24 mx-auto mt-5" src={logo} alt="" />
           <ul className="uppercase p-4">
-            <Link to="/">
-              <li className="px-4 py-2">Home </li>
+            <Link to="/" onClick={handleClick}>
+              <li className="px-4 py-4">Home </li>
             </Link>
 
-            <Link to="/" onClick={() => handleScroll(aboutref)}>
-              <li className="px-4 py-2">About us </li>
+            <Link
+              to="/"
+              onClick={() => {
+                handleScroll(aboutref);
+                handleClick();
+              }}
+            >
+              <li className="px-4 py-4">About us </li>
             </Link>
-            <Link to="/" onClick={() => handleScroll(serviceref)}>
-              <li className="px-4 py-2">services</li>
+            <Link
+              to="/"
+              onClick={() => {
+                handleScroll(serviceref);
+                handleClick();
+              }}
+            >
+              <li className="px-4 py-4">services</li>
             </Link>
-            <Link to="/">
-              <li className="px-4">Our Doctors</li>
+            <Link to="/doctors">
+              <li className="px-4 py-4">Our Doctors</li>
             </Link>
-            <Link to="/" onClick={() => handleScroll(blogref)}>
-              <li className="px-4 py-2">Blog</li>
+            <Link
+              to="/"
+              onClick={() => {
+                handleScroll(blogref);
+                handleClick();
+              }}
+            >
+              <li className="px-4 py-4">Blog</li>
             </Link>
-            <Link to="/" onClick={() => handleScroll(contactref)}>
-              <li className="px-4 py-2">contact</li>
+            <Link
+              to="/"
+              onClick={() => {
+                handleScroll(contactref);
+                handleClick();
+              }}
+            >
+              <li className="px-4 py-4">contact</li>
             </Link>
-            <Link className="text-sm" to="/">
-              <li className="px-4 py-2">APPOINTEMENT</li>
+            <Link className="text-sm" to="/appointment">
+              <li className="px-4 py-4">APPOINTEMENT</li>
             </Link>
           </ul>
           <div className="flex flex-col justify-center items-center gap-2">
