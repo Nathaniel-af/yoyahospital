@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsFillTelephoneFill, BsFacebook, BsTelegram } from "react-icons/bs";
 import { BiCalendar } from "react-icons/bi";
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
+import logo from "../assets/logoholy-min.png";
 import { useNavigate, Link } from "react-router-dom";
 
 function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
@@ -32,8 +33,13 @@ function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
         </div>
         <div className="bg-white flex justify-end items-center px-14 sm:py-6 ">
           <Link to="/">
-            <img
+            {/* <img
               className="absolute h-[70px] w-[80px] md:h-56 md:w-60  md:top-[10px] top-1 left-0 z-30"
+              src={logo}
+              alt=""
+            /> */}
+            <img
+              className="absolute h-[80px]  md:h-60 md:w-60  md:top-[10px] top-1 left-0 z-30"
               src={logo}
               alt=""
             />
