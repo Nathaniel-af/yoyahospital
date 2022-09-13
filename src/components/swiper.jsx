@@ -5,32 +5,26 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
-import poster1 from "../assets/Swiperassets/Frame1-minn.png";
-import poster2 from "../assets/Swiperassets/Frame2-minn.png";
-import poster3 from "../assets/Swiperassets/Frame3-minn.png";
-import poster4 from "../assets/Swiperassets/Frame4-minn.png";
-import poster5 from "../assets/Swiperassets/Frame5-minn.png";
-import poster7 from "../assets/Swiperassets/Frame6-minn.png";
-import poster8 from "../assets/Swiperassets/Frame7-minn.png";
-// import poster9 from "../assets/Swiperassets/Frame2-minn.png;
-import seized from "../assets/Swiperassets/SIZED.jpg";
+import laptop from "../assets/Swiperassets/laptopa.webp";
+import desktop from "../assets/Swiperassets/desktopb.webp";
+import portraitmd from "../assets/Swiperassets/portrait.webp";
+// import seized from "../assets/Swiperassets/SIZED.jpg";
 function Swipper() {
   const images = [
-    poster1,
-    poster2,
-    poster3,
-    poster4,
-    poster5,
-    poster7,
-    poster8,
-    seized,
+    { laptopmd: laptop, desktopmd: desktop, portrait: portraitmd },
   ];
 
   const slider = () => {
-    return images.map((img) => {
+    return images.map((img, index) => {
       return (
-        <SwiperSlide key={img} className="">
-          <img className="h-full w-full " loading="lazy" src={img} alt="" />
+        <SwiperSlide key={index} className="">
+          <img
+            className="h-full w-full lg:object-contain "
+            loading="lazy"
+            src={img.laptopmd}
+            srcSet={`${img.portrait} 1280w,${img.laptopmd} 1366w, ${img.desktopmd} 1600w`}
+            alt=""
+          />
         </SwiperSlide>
       );
     });
@@ -39,7 +33,7 @@ function Swipper() {
   return (
     <div>
       <Swiper
-        className="h-[30vh] md:h-[50vh] lg:h-[80vh] ease-in-out"
+        className="h-[35vh] md:h-[50vh] lg:h-[80vh] ease-in-out"
         modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={10}
         slidesPerView={1}

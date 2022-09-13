@@ -15,7 +15,8 @@ function Blog() {
         <p className="text-center">loading ...</p>
       ) : (
         blog.map((data, index) => (
-          <article
+          <Link
+            to={`/blog:${index}`}
             key={index}
             className=" flex flex-col bg-gray-50 hover:shadow-lg"
           >
@@ -27,9 +28,12 @@ function Blog() {
               />
             </Link>
             <div className="flex flex-col p-6">
-              <Link to="/" className=" py-2 text-lg font-semibold ">
+              <Link
+                to={`/blog:${index}`}
+                className=" py-2 text-lg font-semibold "
+              >
                 {`${data.blogTitle.slice(0, 50)} ${
-                  data.blogTitle.length > 20 && "..."
+                  data.blogTitle.length > 20 ? "..." : ""
                 }`}
               </Link>
               <h1 className="text-base py-2 leading-relaxed  ">
@@ -44,7 +48,7 @@ function Blog() {
                 </span>
               </div>
             </div>
-          </article>
+          </Link>
         ))
       )}
     </>
