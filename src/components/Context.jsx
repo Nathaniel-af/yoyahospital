@@ -18,7 +18,8 @@ export function ContextProvider({ children }) {
         .get(`${import.meta.env.VITE_API}blog/`)
         .then((res) => {
           setLoading(false);
-          setBlog(res.data);
+          // setBlog(res.data);
+          localStorage.setItem("blog", JSON.stringify(res.data));
         })
         .catch((error) => {
           console.log(error);

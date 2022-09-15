@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,7 +17,7 @@ import image3 from "../assets/services/image3-min.png";
 import image4 from "../assets/services/image4-min.png";
 import image5 from "../assets/services/image5-min.png";
 import image6 from "../assets/services/image6-min.png";
-import aboutus from "../assets/aboutus.png";
+import aboutus from "../assets/square.webp";
 import { GrNext } from "react-icons/gr";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import Blog from "../components/blog";
@@ -39,6 +39,7 @@ function Home() {
   const service = useRef();
   const blog = useRef();
   const contact = useRef();
+
   const handleScroll = (ref) => {
     window.scrollTo({
       top: ref.current.offsetTop,
@@ -88,7 +89,7 @@ function Home() {
             transition={{ staggerChildren: 0.5 }}
           >
             <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
-              <div className="border border-gray-200 p-6 h-[26rem] md:h-[22rem] rounded-lg hover:shadow-xl">
+              <div className="border border-gray-300 p-6 h-[26rem] md:h-[22rem] rounded-lg hover:shadow-xl">
                 <div className=" inline-flex items-center justify-center rounded-full ">
                   <img src={image1} alt="" />
                 </div>
@@ -105,7 +106,7 @@ function Home() {
               </div>
             </motion.div>
             <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
-              <div className="border border-gray-200 p-6 h-[22rem] rounded-lg hover:shadow-xl">
+              <div className="border border-gray-300 p-6 h-[22rem] rounded-lg hover:shadow-xl">
                 <div className=" inline-flex items-center justify-center rounded-full">
                   <img src={image2} alt="" />
                 </div>
@@ -121,7 +122,7 @@ function Home() {
               </div>
             </motion.div>
             <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
-              <div className="border border-gray-200 p-6 h-[22rem] rounded-lg hover:shadow-xl">
+              <div className="border border-gray-300 p-6 h-[22rem] rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full mb-4 ">
                   <img src={image3} alt="" />
                 </div>
@@ -138,7 +139,7 @@ function Home() {
             </motion.div>
 
             <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
-              <div className="border border-gray-200 p-6 h-[24rem] md:h-[22rem] rounded-lg hover:shadow-xl">
+              <div className="border border-gray-300 p-6 h-[24rem] md:h-[22rem] rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image6} alt="" />
                 </div>
@@ -155,7 +156,7 @@ function Home() {
               </div>
             </motion.div>
             <motion.div className="xl:w-1/3 md:w-1/2 p-4 " variants={animate}>
-              <div className="border border-gray-200 h-[19rem] md:h-[24rem] lg:h-[22rem] p-6 rounded-lg hover:shadow-xl">
+              <div className="border border-gray-300 h-[19rem] md:h-[26rem] lg:h-[22rem] p-6 rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image5} alt="" />
                 </div>
@@ -169,7 +170,7 @@ function Home() {
               </div>
             </motion.div>
             <motion.div className="xl:w-1/3 md:w-1/2 p-4" variants={animate}>
-              <div className="border border-gray-200 p-6 h-[26rem] lg:h-[22rem] rounded-lg hover:shadow-xl">
+              <div className="border border-gray-300 p-6 h-[26rem] lg:h-[22rem] rounded-lg hover:shadow-xl">
                 <div className="inline-flex items-center justify-center rounded-full  mb-4">
                   <img src={image4} alt="" />
                 </div>
@@ -599,142 +600,6 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 px-5">
             <Blog />
-            {/* <article className="flex flex-col bg-gray-50 hover:shadow-lg">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              >
-                <img
-                  alt=""
-                  className="object-cover w-full h-52 "
-                  src="https://source.unsplash.com/200x200/?fashion?1"
-                />
-              </a>
-              <div className="flex flex-col flex-1 p-6">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  aria-label="Te nulla oportere reprimique his dolorum"
-                ></a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="text-xs tracking-wider uppercase hover:underline "
-                >
-                  Convenire
-                </a>
-                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                  Te nulla oportere reprimique his dolorum
-                </h3>
-                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs">
-                  <span>June 1, 2020</span>
-                  <span>2.1K views</span>
-                </div>
-              </div>
-            </article>
-            <article className="flex flex-col bg-gray-50 hover:shadow-lg">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              >
-                <img
-                  alt=""
-                  className="object-cover w-full h-52 "
-                  src="https://source.unsplash.com/200x200/?fashion?2"
-                />
-              </a>
-              <div className="flex flex-col flex-1 p-6">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  aria-label="Te nulla oportere reprimique his dolorum"
-                ></a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="text-xs tracking-wider uppercase hover:underline "
-                >
-                  Convenire
-                </a>
-                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                  Te nulla oportere reprimique his dolorum
-                </h3>
-                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs ">
-                  <span>June 2, 2020</span>
-                  <span>2.2K views</span>
-                </div>
-              </div>
-            </article>
-            <article className="flex flex-col bg-gray-50 hover:shadow-lg ">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              >
-                <img
-                  alt=""
-                  className="object-cover w-full h-52 "
-                  src="https://source.unsplash.com/200x200/?fashion?3"
-                />
-              </a>
-              <div className="flex flex-col flex-1 p-6">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  aria-label="Te nulla oportere reprimique his dolorum"
-                ></a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="text-xs tracking-wider uppercase hover:underline "
-                >
-                  Convenire
-                </a>
-                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                  Te nulla oportere reprimique his dolorum
-                </h3>
-                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs ">
-                  <span>June 3, 2020</span>
-                  <span>2.3K views</span>
-                </div>
-              </div>
-            </article>
-            <article className="flex flex-col bg-gray-50 hover:shadow-lg">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              >
-                <img
-                  alt=""
-                  className="object-cover w-full h-52 "
-                  src="https://source.unsplash.com/200x200/?fashion?4"
-                />
-              </a>
-              <div className="flex flex-col flex-1 p-6">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  aria-label="Te nulla oportere reprimique his dolorum"
-                ></a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="text-xs tracking-wider uppercase hover:underline "
-                >
-                  Convenire
-                </a>
-                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                  Te nulla oportere reprimique his dolorum
-                </h3>
-                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs ">
-                  <span>June 4, 2020</span>
-                  <span>2.4K views</span>
-                </div>
-              </div>
-            </article> */}
           </div>
         </div>
       </section>
@@ -918,11 +783,8 @@ function Home() {
       {/* bgpic */}
       <footer className="p-4 h-[300px] w-full mt-8 rounded-lg shadow md:px-20 flex flex-col justify-center  bg-teal-700 ">
         <div className="sm:flex sm:items-center sm:justify-between">
-          <a
-            href="https://flowbite.com/"
-            className="flex items-center mb-4 sm:mb-0"
-          >
-            <img src={logo} className="mr-3 h-16" alt="Flowbite Logo" />
+          <a href="#" className="flex items-center mb-4 sm:mb-0">
+            <img src={logo} className="mr-3 h-16" alt="YOYA Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap  text-white">
               YOYA Hospital
             </span>

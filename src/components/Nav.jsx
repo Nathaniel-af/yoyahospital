@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsFillTelephoneFill, BsFacebook, BsTelegram } from "react-icons/bs";
 import { BiCalendar } from "react-icons/bi";
-// import logo from "../assets/logo.png";
-import logo from "../assets/logoholy-min.png";
+import logo from "../assets/logo.png";
+//import logo from "../assets/logoholy-min.png";
 import { useNavigate, Link } from "react-router-dom";
 
 function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
@@ -21,28 +21,32 @@ function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
           <div className="flex ml-auto mr-5 ">
             <div className="flex justify-between w-[500px] items-center">
               <BsFillTelephoneFill></BsFillTelephoneFill>
-              <a href="tel:0228125646">0228 125646</a>
+              <a href="tel:0943434327">0943 434327</a>
               <span className="h-5 bg-white w-[2px]"></span>
-              <a href="tel:0904073307">0904 073307</a>
+              <a href="tel:0962626234">0962 626234</a>
               <span className="h-5 bg-white w-[2px]"></span>
-              <a href="tel:0222122032">022 2122032</a>
-              <BsFacebook size={25}></BsFacebook>
-              <BsTelegram size={25}></BsTelegram>
+              <a href="tel:0222120599">0222 120599</a>
+              <a href="https://facebook.com/YOYAHOSPITAL" target="_blank">
+                <BsFacebook size={25}></BsFacebook>
+              </a>
+              <a href="https://t.me/+M3bjPP4yT1hlZDM8" target="_blank">
+                <BsTelegram size={25}></BsTelegram>
+              </a>
             </div>
           </div>
         </div>
         <div className="bg-white flex justify-end items-center px-14 sm:py-6 ">
           <Link to="/">
-            {/* <img
-              className="absolute h-[70px] w-[80px] md:h-56 md:w-60  md:top-[10px] top-1 left-0 z-30"
-              src={logo}
-              alt=""
-            /> */}
             <img
-              className="absolute h-[80px]  md:h-60 md:w-60  md:top-[10px] top-1 left-0 z-30"
+              className="absolute h-12  md:h-36 lg:h-48   md:top-[10px] top-1 left-0 z-30"
               src={logo}
               alt=""
             />
+            {/* <img
+              className="absolute h-[80px]  md:h-60 md:w-60  md:top-[10px] top-1 left-0 z-30"
+              src={logo}
+              alt=""
+            /> */}
           </Link>
 
           <ul className="hidden lg:flex text-[#818181] text-xs md:text-sm font-semibold uppercase">
@@ -148,12 +152,17 @@ function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
           </ul>
           <div className="flex flex-col justify-center items-center gap-2">
             <BsFillTelephoneFill size={20} />
-            <a href="tel:0228125646">0228 125646</a>
-            <a href="tel:0904073307">0904 073307</a>
-            <a href="tel:0222122032">022 2122032</a>
+            <a href="tel:0943434327">0943 434327</a>
+            <a href="tel:0962626234">0962 626234</a>
+            <a href="tel:0222120599">0222 120599</a>
+
             <div className="flex gap-4">
-              <BsFacebook size={24}></BsFacebook>
-              <BsTelegram size={24}></BsTelegram>
+              <a href="https://facebook.com/YOYAHOSPITAL" target="_blank">
+                <BsFacebook size={24}></BsFacebook>
+              </a>
+              <a href="https://t.me/+M3bjPP4yT1hlZDM8" target="_blank">
+                <BsTelegram size={24}></BsTelegram>
+              </a>
             </div>
           </div>
         </div>
