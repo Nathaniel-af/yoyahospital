@@ -71,6 +71,23 @@ function Home() {
         handleScroll={handleScroll}
       />
       <Swipper />
+
+      {/* news feed */}
+
+      <section ref={blog} className=" ">
+        <div className="container  mx-auto space-y-8">
+          <div className="space-y-2 text-center">
+            <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
+              Our Recent
+              <h1 className="inline text-[#1990A2]">News</h1>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 px-5">
+            <Blog />
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section ref={service} className="text-gray-600 body-font">
         <div className="container px-5 py-10 md:py-14 mx-auto">
@@ -569,8 +586,8 @@ function Home() {
             }}
           >
             <span className="font-bold text-indigo-500 text-lg">“</span>
-            TIt’s an honor to obtain an extraordinary Gyn/Obs medical treatment
-            @ Yoya. We are blessed with a wonderful cute baby. Huge and immense
+            It’s an honor to obtain an extraordinary Gyn/Obs medical treatment @
+            Yoya. We are blessed with a wonderful cute baby. Huge and immense
             appreciation goes to Dr Abdurahman in particular and his entire
             crew!
             <span className="font-bold text-indigo-500 text-lg">”</span>
@@ -592,21 +609,7 @@ function Home() {
           </div>
         </div>
       </motion.div>
-      {/* news feed */}
 
-      <section ref={blog} className=" ">
-        <div className="container  mx-auto space-y-8">
-          <div className="space-y-2 text-center">
-            <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  font-semibold text-gray-900 flex justify-center gap-2 ">
-              Our Recent
-              <h1 className="inline text-[#1990A2]">News</h1>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 px-5">
-            <Blog />
-          </div>
-        </div>
-      </section>
       {/* contact us */}
       <section ref={contact} className="text-gray-600 body-font relative">
         <div className="title-font sm:text-2xl text-xl mt-10 md:text-3xl  h-20 font-semibold text-gray-900 flex justify-center gap-2 ">
