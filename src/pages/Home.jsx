@@ -496,9 +496,12 @@ function Home() {
             }}
           >
             <span className="font-bold text-indigo-500 text-lg">“</span>
-            To get social media testimonials like these, keep your customers
-            engaged with your social media accounts by posting regularly
-            yourself
+            YOYA is the best health Institution and the choice for me and my
+            family !!! Frankly speaking , I have observed and been amazed by the
+            most skillful, honest, caring and compassionate Medical professional
+            & specialists in Yoya Hospital. It's beyond my words. And also I
+            hope Yoya Hospital will extend their Service capacity with
+            accessibility to remote Area people in the future. Thank you!
             <span className="font-bold text-indigo-500 text-lg">”</span>
           </motion.p>
           <div className="flex items-center mt-4">
@@ -511,9 +514,9 @@ function Home() {
             </a>
             <div className="flex flex-col ml-2 justify-between">
               <span className="font-semibold text-[#1990A2] text-sm">
-                Firaol Birhanu
+                Mr. Wudneh Getahun
               </span>
-              <span className=" text-xs flex items-center">CEO of HABESHA</span>
+              <span className=" text-xs flex items-center">customer</span>
             </div>
           </div>
         </div>
@@ -530,9 +533,11 @@ function Home() {
             }}
           >
             <span className="font-bold text-indigo-500 text-lg">“</span>
-            To get social media testimonials like these, keep your customers
-            engaged with your social media accounts by posting regularly
-            yourself
+            It’s such a good news and opportunity for the community What I like
+            most about Yoya is that you will get the specific physician you need
+            directly face to face without any challenge.We should share the
+            information of such a hospital so that our community will benefit a
+            lot from it.
             <span className="font-bold text-indigo-500 text-lg">”</span>
           </motion.p>
           <div className="flex items-center mt-4">
@@ -545,11 +550,9 @@ function Home() {
             </a>
             <div className="flex flex-col ml-2 justify-between">
               <span className="font-semibold text-[#1990A2] text-sm">
-                Firaol Birhanu
+                Asiya Jeylan
               </span>
-              <span className=" text-xs flex items-center">
-                employee of yoya
-              </span>
+              <span className=" text-xs flex items-center">customer</span>
             </div>
           </div>
         </div>
@@ -566,9 +569,10 @@ function Home() {
             }}
           >
             <span className="font-bold text-indigo-500 text-lg">“</span>
-            To get social media testimonials like these, keep your customers
-            engaged with your social media accounts by posting regularly
-            yourself
+            TIt’s an honor to obtain an extraordinary Gyn/Obs medical treatment
+            @ Yoya. We are blessed with a wonderful cute baby. Huge and immense
+            appreciation goes to Dr Abdurahman in particular and his entire
+            crew!
             <span className="font-bold text-indigo-500 text-lg">”</span>
           </motion.p>
           <div className="flex items-center mt-4">
@@ -581,7 +585,7 @@ function Home() {
             </a>
             <div className="flex flex-col ml-2 justify-between">
               <span className="font-semibold text-[#1990A2] text-sm">
-                Firaol Birhanu
+                Mr Edao Abdi
               </span>
               <span className="text-xs flex items-center">Customer</span>
             </div>
