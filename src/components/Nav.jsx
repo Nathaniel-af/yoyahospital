@@ -29,7 +29,7 @@ function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
               <a href="https://facebook.com/YOYAHOSPITAL" target="_blank">
                 <BsFacebook size={25}></BsFacebook>
               </a>
-              <a href="https://t.me/+M3bjPP4yT1hlZDM8" target="_blank">
+              <a href="https://t.me/YOYA_ADAMA" target="_blank">
                 <BsTelegram size={25}></BsTelegram>
               </a>
             </div>
@@ -160,7 +160,7 @@ function Nav({ aboutref, serviceref, blogref, contactref, handleScroll }) {
               <a href="https://facebook.com/YOYAHOSPITAL" target="_blank">
                 <BsFacebook size={24}></BsFacebook>
               </a>
-              <a href="https://t.me/+M3bjPP4yT1hlZDM8" target="_blank">
+              <a href="https://t.me/YOYA_ADAMA" target="_blank">
                 <BsTelegram size={24}></BsTelegram>
               </a>
             </div>
